@@ -28,6 +28,11 @@ def divide(a: float, b: float) -> float:
 def power(a: float, b: float) -> float:
     return a ** b
 
+def modulus(a: float, b: float) -> float:
+    if b == 0:
+        raise ValueError("Cannot modulus by zero")
+    return a % b
+
 
 def main():
     parser = argparse.ArgumentParser(description="Simple calculator CLI")
