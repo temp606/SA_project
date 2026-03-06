@@ -26,9 +26,43 @@ def divide(a: float, b: float) -> float:
     return a / b
 
 def power(a: float, b: float) -> float:
+    """Raise a to the power of b.
+    
+    Args:
+        a: Base value
+        b: Exponent
+        
+    Returns:
+        a raised to the power of b
+        
+    Raises:
+        ValueError: If base is 0 and exponent is 0 (undefined in mathematics)
+        ValueError: If base is 0 and exponent is negative (undefined)
+    """
+    if a == 0 and b == 0:
+        raise ValueError("Cannot compute 0**0 (undefined)")
+    if a == 0 and b < 0:
+        raise ValueError("Cannot compute 0 to a negative power (undefined)")
     return a ** b
 
 def modulus(a: float, b: float) -> float:
+    """Compute a modulo b.
+    
+    Args:
+        a: Dividend
+        b: Divisor
+        
+    Returns:
+        Remainder of a divided by b
+        
+    Raises:
+        ValueError: If divisor is 0
+        
+    Note:
+        In Python, modulus with negative values follows the convention:
+        The result has the same sign as the divisor b.
+        Example: -7 % 3 = 2, 7 % -3 = -2
+    """
     if b == 0:
         raise ValueError("Cannot modulus by zero")
     return a % b
@@ -40,8 +74,8 @@ def main():
     parser.add_argument("y", type=float, help="Second operand")
     parser.add_argument(
         "operation",
-        choices=["add", "sub", "mul", "div"],
-        help="Operation to perform: add, sub, mul, div",
+        choices=["add", "sub", "mul", "div", "pow", "mod"],
+        help="Operation to perform: add, sub, mul, div, pow, mod",
     )
     args = parser.parse_args()
 
@@ -50,6 +84,8 @@ def main():
         "sub": subtract,
         "mul": multiply,
         "div": divide,
+        "pow": power,
+        "mod": modulus,
     }
 
     func = ops[args.operation]
