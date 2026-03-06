@@ -67,6 +67,23 @@ def modulus(a: float, b: float) -> float:
         raise ValueError("Cannot modulus by zero")
     return a % b
 
+def floor_divide(a: float, b: float) -> float:
+    """Compute the floor division of a by b.
+    
+    Args:
+        a: Dividend
+        b: Divisor
+        
+    Returns:
+        The largest integer less than or equal to a divided by b
+        
+    Raises:
+        ValueError: If divisor is 0
+    """
+    if b == 0:
+        raise ValueError("Cannot floor divide by zero")
+    return a // b
+
 
 def main():
     parser = argparse.ArgumentParser(
