@@ -4,12 +4,20 @@ A robust Python calculator with support for basic arithmetic and advanced operat
 
 ## Features
 
+<<<<<<< HEAD
+- **Basic Operations**: Addition, subtraction, multiplication, division, floor division
+=======
 - **Basic Operations**: Addition, subtraction, multiplication, division
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 - **Advanced Operations**: Power (exponentiation), modulus
 - **Error Handling**: Validates division by zero, modulus by zero, and undefined mathematical operations
 - **CLI Interface**: Easy-to-use command-line interface
 - **Type Safety**: Full type hints throughout the codebase
+<<<<<<< HEAD
+- **Comprehensive Tests**: 17 unit tests covering normal and edge cases (add, subtract, multiply, divide, floor divide, power, modulus)
+=======
 - **Comprehensive Tests**: 14 unit tests covering normal and edge cases
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 
 ## Installation
 
@@ -39,6 +47,10 @@ python calculator.py <operand1> <operand2> <operation>
 - `sub` - Subtraction
 - `mul` - Multiplication
 - `div` - Division
+<<<<<<< HEAD
+- `floordiv` - Floor division
+=======
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 - `pow` - Power/Exponentiation
 - `mod` - Modulus
 
@@ -60,6 +72,13 @@ python calculator.py 6 7 mul
 python calculator.py 10 2 div
 # Output: 5.0
 
+<<<<<<< HEAD
+# Floor Division
+python calculator.py 10 3 floordiv
+# Output: 3.0
+
+=======
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 # Power
 python calculator.py 2 3 pow
 # Output: 8.0
@@ -72,6 +91,20 @@ python calculator.py 10 3 mod
 ### Using as a Module
 
 ```python
+<<<<<<< HEAD
+from calculator import add, subtract, multiply, divide, floor_divide, power, modulus
+
+# Basic operations
+result = add(5, 3)              # 8
+result = subtract(10, 4)        # 6
+result = multiply(6, 7)         # 42
+result = divide(10, 2)          # 5.0
+result = floor_divide(10, 3)    # 3.0
+
+# Advanced operations
+result = power(2, 3)            # 8
+result = modulus(10, 3)         # 1
+=======
 from calculator import add, subtract, multiply, divide, power, modulus
 
 # Basic operations
@@ -83,6 +116,7 @@ result = divide(10, 2)    # 5.0
 # Advanced operations
 result = power(2, 3)      # 8
 result = modulus(10, 3)   # 1
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 ```
 
 ## Edge Cases & Validation
@@ -117,6 +151,20 @@ modulus(-7, -3)  # Returns -1
 ### Division Function
 - **Division by zero**: Raises `ValueError`
 
+<<<<<<< HEAD
+### Floor Division Function
+- **Division by zero**: Raises `ValueError`
+- **Returns integer result**: `10 // 3 = 3.0`, `-7 // 2 = -4.0`
+
+Example:
+```python
+floor_divide(10, 3)   # Returns 3.0
+floor_divide(-7, 2)   # Returns -4.0 (rounds down toward negative infinity)
+floor_divide(7, 2)    # Returns 3.0
+```
+
+=======
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 ## Testing
 
 Run the test suite:
@@ -133,9 +181,17 @@ pytest test_calculator.py::test_power_zero_to_zero -v
 ```
 
 ### Test Coverage
+<<<<<<< HEAD
+The test suite includes 17 tests covering:
+- ✅ Basic arithmetic operations (add, subtract, multiply, divide)
+- ✅ Division by zero validation
+- ✅ Floor division with positive, negative, and mixed operands
+- ✅ Floor division by zero validation
+=======
 The test suite includes 14 tests covering:
 - ✅ Basic arithmetic operations
 - ✅ Division by zero validation
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 - ✅ Power function with normal, zero, and negative exponents
 - ✅ 0**0 edge case
 - ✅ 0 to negative power edge case
@@ -150,7 +206,12 @@ All tests pass successfully.
 .
 ├── calculator.py          # Main calculator module with all operations
 ├── test_calculator.py     # Unit tests for all functions
+<<<<<<< HEAD
+├── README.md              # This file
+└── __pycache__/           # Python bytecode cache (generated at runtime)
+=======
 └── README.md             # This file
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 ```
 
 ## Error Handling

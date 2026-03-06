@@ -1,5 +1,9 @@
 import pytest
+<<<<<<< HEAD
+from calculator import add, subtract, multiply, divide, floor_divide, power, modulus
+=======
 from calculator import add, subtract, multiply, divide, power, modulus
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 
 
 def test_add():
@@ -80,3 +84,25 @@ def test_modulus_both_negative():
     # In Python: -7 % -3 = -1 (result sign follows divisor)
     assert modulus(-7, -3) == -1
     assert modulus(-8, -3) == -2
+<<<<<<< HEAD
+
+
+def test_floor_divide():
+    assert floor_divide(10, 3) == 3.0
+    assert floor_divide(7, 2) == 3.0
+    assert floor_divide(10, 5) == 2.0
+
+
+def test_floor_divide_by_zero():
+    with pytest.raises(ValueError):
+        floor_divide(5, 0)
+
+
+def test_floor_divide_negative():
+    """Test floor division with negative values (rounds toward negative infinity)"""
+    # In Python: -7 // 2 = -4 (rounds toward negative infinity)
+    assert floor_divide(-7, 2) == -4.0
+    assert floor_divide(7, -2) == -4.0
+    assert floor_divide(-7, -2) == 3.0
+=======
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320

@@ -1,6 +1,10 @@
 """Simple calculator application.
 
+<<<<<<< HEAD
+Provides basic arithmetic operations (add, subtract, multiply, divide, floor divide) and
+=======
 Provides basic arithmetic operations (add, subtract, multiply, divide) and
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
 advanced operations (power, modulus). Can be used as a module or from the command line.
 """
 
@@ -36,8 +40,13 @@ def power(a: float, b: float) -> float:
         a raised to the power of b
         
     Raises:
+<<<<<<< HEAD
+        ValueError: If base is 0 and exponent is 0 (i.e., 0**0 is undefined in mathematics)
+        ValueError: If base is 0 and exponent is negative (i.e., 0**n where n < 0 is undefined)
+=======
         ValueError: If base is 0 and exponent is 0 (undefined in mathematics)
         ValueError: If base is 0 and exponent is negative (undefined)
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
     """
     if a == 0 and b == 0:
         raise ValueError("Cannot compute 0**0 (undefined)")
@@ -67,17 +76,46 @@ def modulus(a: float, b: float) -> float:
         raise ValueError("Cannot modulus by zero")
     return a % b
 
+<<<<<<< HEAD
+def floor_divide(a: float, b: float) -> float:
+    """Compute the floor division of a by b.
+    
+    Args:
+        a: Dividend
+        b: Divisor
+        
+    Returns:
+        The largest integer less than or equal to a divided by b
+        
+    Raises:
+        ValueError: If divisor is 0
+    """
+    if b == 0:
+        raise ValueError("Cannot floor divide by zero")
+    return a // b
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Simple calculator CLI: performs arithmetic (add, sub, mul, div, floordiv) and advanced (pow, mod) operations"
+=======
 
 def main():
     parser = argparse.ArgumentParser(
         description="Simple calculator CLI: performs arithmetic (add, sub, mul, div) and advanced (pow, mod) operations"
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
     )
     parser.add_argument("x", type=float, help="First operand")
     parser.add_argument("y", type=float, help="Second operand")
     parser.add_argument(
         "operation",
+<<<<<<< HEAD
+        choices=["add", "sub", "mul", "div", "floordiv", "pow", "mod"],
+        help="Operation to perform: add, sub, mul, div, floordiv (floor division), pow (power/exponentiation), mod (modulus)",
+=======
         choices=["add", "sub", "mul", "div", "pow", "mod"],
         help="Operation to perform: add, sub, mul, div, pow (power/exponentiation), mod (modulus)",
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
     )
     args = parser.parse_args()
 
@@ -86,6 +124,10 @@ def main():
         "sub": subtract,
         "mul": multiply,
         "div": divide,
+<<<<<<< HEAD
+        "floordiv": floor_divide,
+=======
+>>>>>>> 9d243d685a2162f35961bb796dabd5b91a6a6320
         "pow": power,
         "mod": modulus,
     }
