@@ -36,8 +36,8 @@ def power(a: float, b: float) -> float:
         a raised to the power of b
         
     Raises:
-        ValueError: If base is 0 and exponent is 0 (undefined in mathematics)
-        ValueError: If base is 0 and exponent is negative (undefined)
+        ValueError: If base is 0 and exponent is 0 (i.e., 0**0 is undefined in mathematics)
+        ValueError: If base is 0 and exponent is negative (i.e., 0**n where n < 0 is undefined)
     """
     if a == 0 and b == 0:
         raise ValueError("Cannot compute 0**0 (undefined)")

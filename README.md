@@ -9,7 +9,7 @@ A robust Python calculator with support for basic arithmetic and advanced operat
 - **Error Handling**: Validates division by zero, modulus by zero, and undefined mathematical operations
 - **CLI Interface**: Easy-to-use command-line interface
 - **Type Safety**: Full type hints throughout the codebase
-- **Comprehensive Tests**: 14 unit tests covering normal and edge cases
+- **Comprehensive Tests**: 14 unit tests covering normal and edge cases (add, subtract, multiply, divide, power, modulus, floor division)
 
 ## Installation
 
@@ -167,7 +167,8 @@ All tests pass successfully.
 .
 ├── calculator.py          # Main calculator module with all operations
 ├── test_calculator.py     # Unit tests for all functions
-└── README.md             # This file
+├── README.md              # This file
+└── __pycache__/           # Python bytecode cache (generated at runtime)
 ```
 
 ## Error Handling
