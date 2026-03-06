@@ -4,7 +4,7 @@ A robust Python calculator with support for basic arithmetic and advanced operat
 
 ## Features
 
-- **Basic Operations**: Addition, subtraction, multiplication, division
+- **Basic Operations**: Addition, subtraction, multiplication, division, floor division
 - **Advanced Operations**: Power (exponentiation), modulus
 - **Error Handling**: Validates division by zero, modulus by zero, and undefined mathematical operations
 - **CLI Interface**: Easy-to-use command-line interface
@@ -39,6 +39,7 @@ python calculator.py <operand1> <operand2> <operation>
 - `sub` - Subtraction
 - `mul` - Multiplication
 - `div` - Division
+- `floordiv` - Floor division
 - `pow` - Power/Exponentiation
 - `mod` - Modulus
 
@@ -60,6 +61,10 @@ python calculator.py 6 7 mul
 python calculator.py 10 2 div
 # Output: 5.0
 
+# Floor Division
+python calculator.py 10 3 floordiv
+# Output: 3.0
+
 # Power
 python calculator.py 2 3 pow
 # Output: 8.0
@@ -72,17 +77,18 @@ python calculator.py 10 3 mod
 ### Using as a Module
 
 ```python
-from calculator import add, subtract, multiply, divide, power, modulus
+from calculator import add, subtract, multiply, divide, floor_divide, power, modulus
 
 # Basic operations
-result = add(5, 3)        # 8
-result = subtract(10, 4)  # 6
-result = multiply(6, 7)   # 42
-result = divide(10, 2)    # 5.0
+result = add(5, 3)              # 8
+result = subtract(10, 4)        # 6
+result = multiply(6, 7)         # 42
+result = divide(10, 2)          # 5.0
+result = floor_divide(10, 3)    # 3.0
 
 # Advanced operations
-result = power(2, 3)      # 8
-result = modulus(10, 3)   # 1
+result = power(2, 3)            # 8
+result = modulus(10, 3)         # 1
 ```
 
 ## Edge Cases & Validation
@@ -116,6 +122,17 @@ modulus(-7, -3)  # Returns -1
 
 ### Division Function
 - **Division by zero**: Raises `ValueError`
+
+### Floor Division Function
+- **Division by zero**: Raises `ValueError`
+- **Returns integer result**: `10 // 3 = 3.0`, `-7 // 2 = -4.0`
+
+Example:
+```python
+floor_divide(10, 3)   # Returns 3.0
+floor_divide(-7, 2)   # Returns -4.0 (rounds down toward negative infinity)
+floor_divide(7, 2)    # Returns 3.0
+```
 
 ## Testing
 

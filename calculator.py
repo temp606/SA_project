@@ -1,6 +1,6 @@
 """Simple calculator application.
 
-Provides basic arithmetic operations (add, subtract, multiply, divide) and
+Provides basic arithmetic operations (add, subtract, multiply, divide, floor divide) and
 advanced operations (power, modulus). Can be used as a module or from the command line.
 """
 
@@ -87,14 +87,14 @@ def floor_divide(a: float, b: float) -> float:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Simple calculator CLI: performs arithmetic (add, sub, mul, div) and advanced (pow, mod) operations"
+        description="Simple calculator CLI: performs arithmetic (add, sub, mul, div, floordiv) and advanced (pow, mod) operations"
     )
     parser.add_argument("x", type=float, help="First operand")
     parser.add_argument("y", type=float, help="Second operand")
     parser.add_argument(
         "operation",
-        choices=["add", "sub", "mul", "div", "pow", "mod"],
-        help="Operation to perform: add, sub, mul, div, pow (power/exponentiation), mod (modulus)",
+        choices=["add", "sub", "mul", "div", "floordiv", "pow", "mod"],
+        help="Operation to perform: add, sub, mul, div, floordiv (floor division), pow (power/exponentiation), mod (modulus)",
     )
     args = parser.parse_args()
 
@@ -103,6 +103,7 @@ def main():
         "sub": subtract,
         "mul": multiply,
         "div": divide,
+        "floordiv": floor_divide,
         "pow": power,
         "mod": modulus,
     }
