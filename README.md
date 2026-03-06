@@ -9,7 +9,7 @@ A robust Python calculator with support for basic arithmetic and advanced operat
 - **Error Handling**: Validates division by zero, modulus by zero, and undefined mathematical operations
 - **CLI Interface**: Easy-to-use command-line interface
 - **Type Safety**: Full type hints throughout the codebase
-- **Comprehensive Tests**: 14 unit tests covering normal and edge cases (add, subtract, multiply, divide, power, modulus, floor division)
+- **Comprehensive Tests**: 17 unit tests covering normal and edge cases (add, subtract, multiply, divide, floor divide, power, modulus)
 
 ## Installation
 
@@ -150,9 +150,11 @@ pytest test_calculator.py::test_power_zero_to_zero -v
 ```
 
 ### Test Coverage
-The test suite includes 14 tests covering:
-- ✅ Basic arithmetic operations
+The test suite includes 17 tests covering:
+- ✅ Basic arithmetic operations (add, subtract, multiply, divide)
 - ✅ Division by zero validation
+- ✅ Floor division with positive, negative, and mixed operands
+- ✅ Floor division by zero validation
 - ✅ Power function with normal, zero, and negative exponents
 - ✅ 0**0 edge case
 - ✅ 0 to negative power edge case
